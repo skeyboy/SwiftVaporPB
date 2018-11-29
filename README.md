@@ -4,7 +4,7 @@
 简便的将SwiftProtobuf集成进Vapor项目中
 # 引用项目中
 ```
-.package(url: "https://github.com/apple/swift-protobuf.git", from: "0.0.1")
+.package(url: "git@github.com:skeyboy/SwiftVaporPB.git", from: "0.0.1")
 
 dependencies[..."SwiftVaporPB"]
 ```
