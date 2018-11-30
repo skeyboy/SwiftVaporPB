@@ -7,12 +7,12 @@ public struct PB<T> : Content where T: Message{
     }
 }
 extension PB{
-  public  var entry:T? {
+  internal  var entry:T? {
         return  try? T(serializedData:value)
     }
 }
 extension PB{
-    public static func with<T>(_ populator:( inout T)->()) throws -> PB<T> where T: Message{
+    internal static func with<T>(_ populator:( inout T)->()) throws -> PB<T> where T: Message{
         var p = T.init()
         populator(&p)
         let pb = try  PB<T>.init(p)
@@ -20,12 +20,12 @@ extension PB{
     }
 }
 extension PB{
-    public func textFormatString() -> String{
+    internal func textFormatString() -> String{
         return self.textString
     }
 }
 extension PB{
-  public  var textString:String{
+  internal  var textString:String{
         guard let entry = self.entry else {
             return ""
         }

@@ -14,6 +14,7 @@ final class SwiftVaporPBTests: XCTestCase {
             bookInfo.title = "Hello World"
         }
         do{
+            
             pb  = try  PB<BookInfo>.with { (bookInfo:inout BookInfo) in
                 bookInfo.id = 123
                 bookInfo.author = "Jack"
@@ -25,6 +26,11 @@ final class SwiftVaporPBTests: XCTestCase {
         }catch{
             XCTAssert(error != nil, "\(error)")
         }
+    }
+    func testPBBase(){
+        XCTAssert(pb?.pb.entry != nil, "测试失败")
+        XCTAssert(pb?.pb.textFormatString() == bookInfo?.textFormatString(), "测试失败")
+        XCTAssert(pb?.pb.textString == pb?.textString, "测试失败")
     }
     func testExample() {
         // This is an example of a functional test case.
