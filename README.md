@@ -34,3 +34,5 @@ struct PB<T> : Content where T: Message{
 结果参考：
 
 ![Target](./PB/QQ20181129-171713@2x.png)
+>tag 0.0.2
+添加namespace使调用更加具体清晰
